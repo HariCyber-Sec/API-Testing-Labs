@@ -68,13 +68,23 @@ On successful deletion of `carlos`, the lab environment confirmed completion.
 
 ![Exploit Lab Screenshot](./screenshots/exploit-api-docs.png)
 
-**images of steps done**
-1.(./screenshots/1.jpg)
+**Images of steps done**
+
+1.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/1.jpg)
+2.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/2.jpg)
+3.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/3.jpg)
+4.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/4.jpg)
+5.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/5.jpg)
+6.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/6.jpg)
+7.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/7.jpg)
+8.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/8.jpg)
+9.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/api-recon/screenshots/9.jpg)
 
 ---
 
-## 💡 Key Takeaways
+## 💡Takeaways
 
-- API documentation should **never be exposed** in production environments.
-- Proper **authentication and role-based authorization** must be enforced for sensitive operations like `DELETE`.
-- Swagger/OpenAPI tools can unintentionally reveal dangerous endpoints if not secured.
+- API documentation like Swagger or OpenAPI should never be left exposed in a live environment. It can give attackers a map of your backend.
+- Always make sure sensitive actions (like DELETE) are protected with strong authentication and role-based access control — just being logged 
+  in shouldn't be enough.
+- Developer tools are great for testing, but if not secured properly, they can accidentally expose critical endpoints and create serious vulnerabilities.
