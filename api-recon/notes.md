@@ -68,6 +68,9 @@ On successful deletion of `carlos`, the lab environment confirmed completion.
 
 ![Exploit Lab Screenshot](./screenshots/exploit-api-docs.png)
 
+**images of steps done**
+1.(./screenshots/1.jpg)
+
 ---
 
 ## 💡 Key Takeaways
