@@ -9,7 +9,7 @@
 
 ## 🧠 Overview
 
-This lab demonstrates a common web application vulnerability known as **mass assignment**, where the server improperly trusts user-supplied JSON input. By manipulating JSON parameters, an attacker can assign values to sensitive or hidden fields that should not be user-controllable. The goal of this lab was to exploit this behavior to purchase a premium product without the required authorization.
+This lab demonstrates a common web application vulnerability known as **mass assignment**. Demonstrates how improper handling of object-level permissions in APIs can be abused. Specifically, we target a hidden chosen_discount field in the backend API request — not exposed by the frontend — and inject it to trick the server into giving us a 100% discount.
 
 ---
 
@@ -21,50 +21,70 @@ This lab demonstrates a common web application vulnerability known as **mass ass
 - Used the default test credentials:
   Username: wiener
   Password: peter
+  Logged in as a normal user
   
 ### 🛒 2. Navigated to Product Purchase Page
 
 - Selected the product: **Lightweight l33t Leather Jacket**.
-- Initiated a normal purchase attempt through the frontend by adding the product to cart.
+- Initiated a normal purchase attempt through the frontend by adding the product to cart
+- Tried to place an order
+- Clicked "Place order" in the basket.
+- Got a message saying insufficient credit to buy the product..
 
-### 🎯 3. Captured the Request in Burp Suite
+### 🎯 3. Inspected the HTTP requests using Burp Suite
 
-- Initiated a normal purchase attempt through the frontend by adding the product to cart.
-- Intercepted Checkout Request
-
--Used Burp Suite to intercept the checkout request.
-The request was captured as:
-
-POST /api/checkout HTTP/1.1
-Content-Type: application/json
+- In Proxy > HTTP history, found:
+- A GET /api/checkout request
+- A POST /api/checkout request
+- The GET response showed a field called chosen_discount (it wasn't there in the POST body).
 
  
-### 🔍 4. Attempted Basic Injection
+### 🔍 4.  Sent the POST request to Repeater and modified it
 
- -Tried injecting a discount value directly.
- -Received an error response indicating improper request body.
+- Added this to the body:
+- {
+  "chosen_discount": {
+    "percentage": 0
+  },
+  "chosen_products": [
+    {
+      "product_id": "1",
+      "quantity": 1
+    }
+  ]
+}
+- Sent the request — no error, which meant the server accepted the field.
 
-### 📦 5. Analyzed Full JSON Structure
+### 📦 5. Tested further to confirm server behavior
 
--Switched Burp Suite to display full JSON object using the Content-Type Converter extension.
--Reused the entire structure from the initial API response and added the discount parameter manually.
--This request succeeded and a discount was applied.
+- Changed percentage to "x" and resent — got an error.
+
+- This confirmed the server was processing the discount value.
 
 ### ✅ 6. Confirmed Exploit & Lab Completion
-
--After the modified checkout request, returned to the cart summary.
--Verified that the discount had been applied without any authorization.
--Lab marked as Solved.
+- Updated the discount to 100:
+- {
+  "chosen_discount": {
+    "percentage": 100
+  },
+  "chosen_products": [
+    {
+      "product_id": "1",
+      "quantity": 1
+    }
+  ]
+}
+- Sent it — 💥 Order went through successfully with 100% discount!
 
 ### 🛠️ Tools & Technologies Used
 
 Burp Suite — for intercepting and modifying HTTP requests.
 
-Content-Type Converter — for auto-converting requests into JSON.
+JSON crafting – to inject hidden parameters manually.
 
-Browser Dev Tools — to inspect and verify request/response payloads.
+Logic testing – to confirm parameter acceptance and behavior.
 
-📸 Evidence
+### 📸 Evidence
 
 Add screenshot proof at:api-recon/screenshots/mass-assignment-exploit.png
 
