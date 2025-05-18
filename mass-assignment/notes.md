@@ -86,7 +86,7 @@ Logic testing – to confirm parameter acceptance and behavior.
 
 ### 📸 Evidence
 
-Add screenshot proof at:api-recon/screenshots/mass-assignment-exploit.png
+Add screenshot proof at: ![Exploit Lab Screenshot](./screenshots/mass-assignment-exploit.jpg)
 
 ### 💡 Key Takeaways
 
