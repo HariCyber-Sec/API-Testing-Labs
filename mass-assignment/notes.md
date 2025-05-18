@@ -101,13 +101,10 @@ Add screenshot proof at: ![Exploit Lab Screenshot](./screenshots/mass-assignment
 9.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/9.jpg)
 10.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/10.jpg)
 
-### 💡 Key Takeaways
+### 💡 Takeaways
 
-Mass assignment can expose hidden parameters like isAdmin, discount, or userId.
-
-APIs should strictly validate and whitelist allowed fields.
-
-Returning full JSON responses can leak exploitable structure.
+Mass assignment vulnerabilities happen when APIs blindly accept and bind user input to internal objects. This can accidentally expose hidden fields like isAdmin, discount, or userId things a normal user shouldn’t be able to change.
+To prevent this, APIs should strictly validate and whitelist only safe fields.Also, returning full JSON objects in responses can unintentionally reveal sensitive fields, making it easier for attackers to discover what they can exploit.
  
  
  
