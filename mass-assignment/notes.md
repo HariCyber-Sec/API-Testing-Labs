@@ -88,6 +88,19 @@ Logic testing – to confirm parameter acceptance and behavior.
 
 Add screenshot proof at: ![Exploit Lab Screenshot](./screenshots/mass-assignment-exploit.jpg)
 
+**Images of steps done**
+
+1.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/1.jpg)
+2.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/2.jpg)
+3.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/3.jpg)
+4.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/4.jpg)
+5.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/5.jpg)
+6.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/6.jpg)
+7.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/7.jpg)
+8.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/8.jpg)
+9.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/9.jpg)
+10.![Exploit Lab Screenshot](https://github.com/HariCyber-Sec/API-Testing-Labs/blob/main/mass-assignment/screenshots/10.jpg)
+
 ### 💡 Key Takeaways
 
 Mass assignment can expose hidden parameters like isAdmin, discount, or userId.
